@@ -59,7 +59,7 @@ app.use((req, res) => {
 
 // Database connection
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/saazebharat';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&';
 
 mongoose.connect(MONGODB_URI)
     .then(() => {
@@ -69,3 +69,4 @@ mongoose.connect(MONGODB_URI)
     .catch((err) => {
         console.error('MongoDB connection error:', err);
     });
+
